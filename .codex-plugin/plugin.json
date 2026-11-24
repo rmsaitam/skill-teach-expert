@@ -1,0 +1,39 @@
+{
+  "name": "teach",
+  "version": "0.1.0",
+  "description": "Builds a persistent, personalized study space with short self-contained HTML lessons grounded in verified sources, citations, quizzes, audio and recorded progress.",
+  "author": {
+    "name": "Reginaldo (rmsaitam)",
+    "url": "https://github.com/rmsaitam"
+  },
+  "license": "MIT",
+  "keywords": [
+    "teach",
+    "study",
+    "learning",
+    "sources",
+    "lessons",
+    "html",
+    "quiz",
+    "audio",
+    "progress"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Teach",
+    "shortDescription": "Continuous personalized study with verified sources and HTML lessons",
+    "longDescription": "Treats model memory as unreliable, verifies every claim against authoritative sources, records a source ledger with history in RESOURCES.md, writes short self-contained HTML lessons with quizzes and speech audio, and stores goals and progress in the study directory so learning resumes across sessions.",
+    "developerName": "Reginaldo (rmsaitam)",
+    "category": "Education",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "Use /teach to start studying a topic with verified sources and short HTML lessons",
+      "Continue my study from the saved progress with /teach next",
+      "Show my study status with /teach status"
+    ],
+    "brandColor": "#4F46E5",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg",
+    "screenshots": []
+  }
+}
