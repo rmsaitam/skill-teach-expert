@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Teach">
+  <rect width="64" height="64" rx="14" fill="#4F46E5"/>
+  <path d="M32 18c-6-4-13-5-20-3v26c7-2 14-1 20 3 6-4 13-5 20-3V15c-7-2-14-1-20 3Z" fill="#FFFFFF"/>
+  <path d="M32 18v26" stroke="#4F46E5" stroke-width="3"/>
+  <path d="m45 8 1.6 4.4L51 14l-4.4 1.6L45 20l-1.6-4.4L39 14l4.4-1.6L45 8Z" fill="#FCD34D"/>
+</svg>
