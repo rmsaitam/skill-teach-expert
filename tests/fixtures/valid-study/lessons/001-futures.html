@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- teach:lesson-html id=L-001 lang=pt-BR sources=R-001 quiz=3 audio=true -->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Futures preguiçosos</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #ffffff; --fg: #111827; --accent: #4f46e5; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111827; --fg: #f9fafb; --accent: #a5b4fc; } }
+    body { font-family: system-ui, sans-serif; margin: 0 auto; max-width: 46rem; padding: 1.5rem; background: var(--bg); color: var(--fg); line-height: 1.6; }
+    .question { border: 1px solid var(--accent); border-radius: .5rem; margin: .75rem 0; padding: .75rem 1rem; }
+    button { background: var(--accent); color: var(--bg); border: 0; border-radius: .4rem; cursor: pointer; padding: .5rem .8rem; font: inherit; }
+    .feedback { min-height: 1.5rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="meta">Objetivo: entender por que Futures são preguiçosos. Tempo: 8 minutos.</p>
+    <h1>Futures preguiçosos</h1>
+
+    <h2>Ideia central</h2>
+    <p>Uma Future não executa trabalho até que alguém faça polling dela, conforme a documentação oficial <a href="https://doc.rust-lang.org/stable/book/" target="_blank" rel="noopener noreferrer">[R-001]</a>.</p>
+
+    <details>
+      <summary>Mostrar uma dica</summary>
+      <p>Pense em uma promessa que só age quando alguém pergunta por ela.</p>
+    </details>
+
+    <h2>Narração</h2>
+    <p>
+      <button type="button" id="speak">Ouvir lição</button>
+      <button type="button" id="stop">Parar</button>
+    </p>
+    <p id="audio-status" class="feedback" aria-live="polite"></p>
+    <details id="transcript">
+      <summary>Transcrição</summary>
+      <p>Uma Future é preguiçosa e só avança quando recebe polling.</p>
+    </details>
+
+    <h2>Quiz</h2>
+    <ol id="quiz">
+      <li class="question" data-answer="b" data-correct="Correto." data-wrong="Ainda não.">
+        <p>Uma Future começa a trabalhar quando:</p>
+        <button type="button" data-option="a">é criada</button>
+        <button type="button" data-option="b">recebe polling</button>
+      </li>
+      <li class="question" data-answer="a" data-correct="Correto." data-wrong="Ainda não.">
+        <p>Sem polling, a Future:</p>
+        <button type="button" data-option="a">não faz nada</button>
+        <button type="button" data-option="b">termina sozinha</button>
+      </li>
+      <li class="question" data-answer="b" data-correct="Correto." data-wrong="Ainda não.">
+        <p>O polling é feito por:</p>
+        <button type="button" data-option="a">compilador</button>
+        <button type="button" data-option="b">runtime</button>
+      </li>
+    </ol>
+    <p id="score" class="feedback" aria-live="polite">0 de 3 acertos.</p>
+
+    <h2>Próximo passo</h2>
+    <p>Revisar o ciclo de polling antes de estudar async/await.</p>
+  </main>
+  <script>
+    const questions = Array.from(document.querySelectorAll('.question'));
+    const answers = new Map();
+    const status = document.getElementById('audio-status');
+    const transcript = document.getElementById('transcript').textContent.trim();
+    const speakButton = document.getElementById('speak');
+    const stopButton = document.getElementById('stop');
+
+    questions.forEach(function (question) {
+      question.querySelectorAll('button').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const correct = question.getAttribute('data-answer') === button.getAttribute('data-option');
+          answers.set(question, correct);
+          const hits = Array.from(answers.values()).filter(Boolean).length;
+          document.getElementById('score').textContent = hits + ' de ' + questions.length + ' acertos.';
+        });
+      });
+    });
+
+    if ('speechSynthesis' in window) {
+      speakButton.addEventListener('click', function () {
+        const utterance = new SpeechSynthesisUtterance(transcript);
+        utterance.lang = document.documentElement.lang;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+        status.textContent = 'Narrando a lição.';
+      });
+      stopButton.addEventListener('click', function () {
+        window.speechSynthesis.cancel();
+        status.textContent = 'Narração interrompida.';
+      });
+    } else {
+      speakButton.disabled = true;
+      stopButton.disabled = true;
+      status.textContent = 'Narração indisponível; use a transcrição.';
+    }
+  </script>
+</body>
+</html>
