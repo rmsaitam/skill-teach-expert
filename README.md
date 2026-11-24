@@ -1,5 +1,7 @@
 # Teach
 
+[![skills.sh](https://skills.sh/b/rmsaitam/skill-teach-expert)](https://skills.sh/rmsaitam/skill-teach-expert)
+
 A skill for continuous, personalized study in coding agents. It turns a directory into a persistent study space: goals, verified sources, short HTML lessons, verification history, and progress are saved in files and resumed in later sessions.
 
 The trigger is always manual: `/teach`. The skill does not answer quick questions and does not change topics without explicit confirmation.
