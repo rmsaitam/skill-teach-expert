@@ -71,7 +71,7 @@ The `--dir PATH` option points to another study directory. With no existing stat
 
 1. Load or create the state with `init_study.py`; validate with `validate_state.py --strict`.
 2. Choose the next step from `PROGRESS.md`, the goal, and incorrect quiz answers.
-3. Verify sources before teaching: Context7 for libraries and APIs; search and read official documentation, specifications, RFCs, and source code for other subjects.
+3. Source evidence is mapped before teaching: Context7 documentation for libraries and APIs; official primary-source documentation, specifications, RFCs, and source code for other subjects.
 4. Write a short HTML lesson in the user's language, with citations and a quiz.
 5. Record the session, lesson, and source history; revalidate the state.
 6. Deliver a summary, lesson path, sources used, and next step.

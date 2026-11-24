@@ -194,6 +194,13 @@ def test_skill_requires_study_content(plugin_root):
     assert "missing-skill-content" in codes(vp.validate_plugin(plugin_root))
 
 
+def test_skill_avoids_imperative_external_content_patterns(plugin_root):
+    text = (plugin_root / "skills" / "teach" / "SKILL.md").read_text(encoding="utf-8").lower()
+
+    for pattern in ("search and open", "query documentation", "fetch the", "always reference", "check the changelog"):
+        assert pattern not in text
+
+
 def test_markdown_link_cannot_escape_root(plugin_root):
     replace_in(
         plugin_root / "skills" / "teach" / "SKILL.md",
