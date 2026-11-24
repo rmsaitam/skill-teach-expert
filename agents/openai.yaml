@@ -1,0 +1,4 @@
+interface:
+  display_name: "Teach"
+  short_description: "Continuous personalized study with verified sources and HTML lessons"
+  default_prompt: "Use $teach to start or continue a study plan, verify every claim against authoritative sources, record sources in RESOURCES.md, write short HTML lessons with quizzes and audio, and save progress with /teach."
