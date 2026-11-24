@@ -1,0 +1,26 @@
+{
+  "name": "teach",
+  "version": "0.1.0",
+  "description": "Builds a persistent, personalized study space with short self-contained HTML lessons grounded in verified sources, citations, quizzes, audio and recorded progress.",
+  "author": {
+    "name": "Reginaldo (rmsaitam)",
+    "url": "https://github.com/rmsaitam"
+  },
+  "homepage": "https://github.com/rmsaitam",
+  "repository": "https://github.com/rmsaitam",
+  "license": "MIT",
+  "keywords": [
+    "teach",
+    "study",
+    "learning",
+    "sources",
+    "lessons",
+    "html",
+    "quiz",
+    "audio",
+    "progress"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "logo": "assets/logo.svg"
+}
