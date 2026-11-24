@@ -1,0 +1,16 @@
+{
+  "name": "teach",
+  "description": "Personalized continuous study plugin for AI coding agents.",
+  "owner": {
+    "name": "Reginaldo (rmsaitam)",
+    "url": "https://github.com/rmsaitam"
+  },
+  "plugins": [
+    {
+      "name": "teach",
+      "description": "Builds a persistent, personalized study space with short self-contained HTML lessons grounded in verified sources, citations, quizzes, audio and recorded progress.",
+      "source": ".",
+      "category": "education"
+    }
+  ]
+}
